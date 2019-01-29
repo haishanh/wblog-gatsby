@@ -1,6 +1,7 @@
 'use strict';
 
 const Promise = require('bluebird');
+const url = require('url');
 const getPage = require('./getPage');
 const cheerio = require('cheerio');
 
@@ -39,13 +40,27 @@ async function getPostList() {
   return list;
 }
 
+function ensureImageAbsUrl(link, base = 'https://wiredcraft.com') {
+  const { hostname } = url.parse(link);
+  if (hostname) return link;
+  return url.resolve(base, link);
+}
+
 async function getPost(p) {
   const html = await getPage(p.href);
   const $ = cheerio.load(html, { decodeEntities: false });
   const $content = $('#content');
 
+  $('#content section.body .right img').map((i, el) => {
+    const src = $(el).attr('src');
+    let nextSrc = ensureImageAbsUrl(src);
+    $(el).attr('src', nextSrc);
+  });
+
   const content = $content.find('section.body .right').html();
   const header = $content.find('header.header .right .right').html();
+
+  // $('#posts li a').map((i, el) => {
   return { content, header, ...p };
 }
 
