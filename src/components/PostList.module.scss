@@ -1,0 +1,41 @@
+.list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 700px;
+
+  li {
+    margin: 15px auto;
+    height: 200px;
+    background-size: cover;
+    color: #fff;
+
+    .header {
+      height: 200px;
+      padding: 10px;
+      background: rgb(2, 0, 36);
+      background: linear-gradient(
+        180deg,
+        rgba(2, 0, 36, 0.3127626050420168) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
+
+    h2 {
+      margin: 10px auto 5px;
+      font-weight: 200;
+      font-size: 1.8em;
+      flex: 1;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    :hover {
+      a {
+        color: #ff4847;
+      }
+    }
+  }
+}

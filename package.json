@@ -1,0 +1,30 @@
+{
+  "name": "wblog-gatsby",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "DEBUG=www gatsby develop -H 0.0.0.0",
+    "build": "NODE_ENV=production gatsby build",
+    "serve": "gatsby serve",
+    "pretty": "prettier --single-quote --write 'src/**/*.{js,scss}'"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.0.1",
+    "bluebird": "^3.5.0",
+    "cheerio": "^1.0.0-rc.2",
+    "classnames": "^2.2.5",
+    "debug": "^4.0.1",
+    "gatsby": "^2.0.60",
+    "gatsby-plugin-sass": "^2.0.7",
+    "hs-with-retry": "^0.0.2",
+    "node-fetch": "^2.3.0",
+    "node-sass": "^4.10.0",
+    "react": "16.7.0-alpha.2",
+    "react-dom": "16.7.0-alpha.2",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.16.1"
+  }
+}
