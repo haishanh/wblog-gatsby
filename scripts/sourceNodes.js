@@ -60,15 +60,14 @@ async function getPost(p) {
   const content = $content.find('section.body .right').html();
   const header = $content.find('header.header .right .right').html();
 
-  // $('#posts li a').map((i, el) => {
   return { content, header, ...p };
 }
 
 async function getAllPosts() {
   const postEntries = await getPostList();
   const jobs = [];
-  // for (let i = 0; i < 2; i++) {
-  for (let i = 0; i < postEntries.length; i++) {
+  for (let i = 0; i < 15; i++) {
+  // for (let i = 0; i < postEntries.length; i++) {
     const p = postEntries[i];
     jobs.push(getPost(p));
   }
