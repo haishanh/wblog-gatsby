@@ -3,6 +3,7 @@
 const debug = require('debug')('www');
 const Promise = require('bluebird');
 const path = require('path');
+const fs = require('fs-extra');
 const sourceNodes = require('./scripts/sourceNodes');
 
 exports.sourceNodes = sourceNodes;
@@ -42,4 +43,11 @@ exports.createPages = ({ graphql, actions }) => {
       });
     });
   });
+};
+
+exports.onPostBuild = () => {
+  fs.copySync(
+    path.join(__dirname, '/src/locales'),
+    path.join(__dirname, '/public/locales')
+  );
 };

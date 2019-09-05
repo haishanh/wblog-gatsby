@@ -5,9 +5,9 @@ import PostList from '../components/PostList';
 import Layout from '../components/Layout';
 import TitleAndMetaTags from '../components/TitleAndMetaTags';
 import createOgUrl from '../utils/createOgUrl';
-import '../utils/reset.scss';
+import '../utils/reset.css';
 
-export default ({ data }) => {
+function Index({ data }) {
   return (
     <Layout>
       <TitleAndMetaTags
@@ -17,17 +17,25 @@ export default ({ data }) => {
       <PostList edges={data.allBlogPost.edges} />
     </Layout>
   );
-};
+}
+
+export default Index;
 
 export const pageQuery = graphql`
   query BlogPostsIndexQuery {
     allBlogPost(limit: 1000) {
       edges {
         node {
+          title
+          date
+          authorData {
+            url
+            position
+            name
+          }
           content
           header
-          coverImage
-          title
+          image
           slug
           href
         }

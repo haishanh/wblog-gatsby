@@ -1,0 +1,41 @@
+.footer {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  padding-top: 30px;
+
+  small {
+    color: #999;
+    text-align: center;
+  }
+}
+
+.social,
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social {
+  height: 60px;
+  a {
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.twitter {
+  color: #222;
+  &:hover {
+    color: #1da1f2;
+  }
+}
+.github {
+  color: #222;
+  &:hover {
+    color: #24292e;
+  }
+}

@@ -1,17 +1,21 @@
 'use strict';
 
-const autoprefixer = require('autoprefixer');
-
 module.exports = {
-  siteMetadata: {
-    title: 'wblog-gatsby'
-  },
+  // siteMetadata: {
+  //   title: 'wblog-gatsby'
+  // },
   plugins: [
     {
-      resolve: 'gatsby-plugin-sass',
+      resolve: 'gatsby-plugin-postcss',
       options: {
-        postCssPlugins: [autoprefixer()]
+        postCssPlugins: [
+          require('postcss-import')(),
+          require('postcss-nested')(),
+          require('autoprefixer')()
+        ]
       }
-    }
+    },
+    // make sure to put the netlify one at the last of the array
+    'gatsby-plugin-netlify'
   ]
 };

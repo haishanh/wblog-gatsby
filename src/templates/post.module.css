@@ -1,0 +1,49 @@
+.root {
+  padding: 40px;
+}
+
+.contentContainer {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 52px;
+  }
+}
+
+.right {
+  text-align: right;
+  max-width: 860px;
+  margin-left: auto;
+  line-height: 140%;
+}
+
+.cover {
+  height: 50vh;
+  background-size: cover;
+}
+
+.postContainer {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 96px;
+
+  & > div:nth-child(1) {
+    flex: 0 1 480px;
+    top: 0;
+    position: sticky;
+  }
+
+  & > div:nth-child(2) {
+    flex: 1;
+    max-width: 960px;
+  }
+
+  aside {
+    width: 384px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
