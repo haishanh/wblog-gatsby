@@ -1,7 +1,10 @@
-
 ## Development
 
 ```bash
+# fetch the content repo
+# sorry, currently it requires the dir's name to be `marketing`
+git clone git@github.com:org-foo/repo-bar.git marketing --depth 1
+
 # install deps
 yarn
 
