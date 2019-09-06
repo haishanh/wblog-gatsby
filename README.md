@@ -1,9 +1,17 @@
+**Note** this repo is public, but the content source repo isn't.
+
 ## Development
 
 ```bash
+# clone this repo
+https://github.com/haishanh/wblog-gatsby.git
+
+# change directory
+cd wblog-gatsby
+
 # fetch the content repo
-# sorry, currently it requires the dir's name to be `marketing`
-git clone git@github.com:org-foo/repo-bar.git marketing --depth 1
+# sorry, it's a private repo
+git clone git@github.com:Wiredcraft/marketing.git --depth 1
 
 # install deps
 yarn
